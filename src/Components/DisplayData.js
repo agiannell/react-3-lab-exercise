@@ -2,6 +2,7 @@ import {Component} from 'react';
 
 class DisplayData extends Component {
  render() {
+    //  const {name, city, country, title, employer, favoriteMovies, id} = this.props.employees[index]
         return (
             <section className="card-container">
                 <h1 className="count">{this.props.employeeID}/{this.props.employeeTotal}</h1>
@@ -22,4 +23,4 @@ class DisplayData extends Component {
     }
 }
 
-export default DisplayData
+export default DisplayData;

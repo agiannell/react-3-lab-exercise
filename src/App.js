@@ -17,6 +17,9 @@ class App extends Component {
   }
 
   handlePrevious() {
+    if(this.state.index === 0){
+      return this.setState({index: this.state.employees.length - 1});
+    }
     this.setState({
         index: this.state.index - 1
     })
@@ -24,17 +27,21 @@ class App extends Component {
   }
 
   handleNext() {
+    if(this.state.index === this.state.employees.length - 1){
+      return this.setState({index: 0});
+    }
     this.setState({
         index: this.state.index + 1
     })
   }
   
   render() {
-    console.log(this.state.index)
+    // const {employees, index} = this.state
     return (
       <div className="main">
           <Header />
           <DisplayData 
+          // employees={employees[index]}
           employeeID={this.state.employees[this.state.index].id}
           employeeTotal={this.state.employees.length}
           firstName={this.state.employees[this.state.index].name.first}
